@@ -1,0 +1,38 @@
+swagger: 2.0
+
+info:
+  title: CEN MC-RC
+  description: Interaction between Machine Control and Reading Coding System - CEN/TS 16238. 
+  contact:
+    name: Pham Huy Hoang (Swiss Post)
+    email: huyhoang.pham@post.ch
+  version: @version@
+
+host: server:8080
+basePath: mqtt
+
+paths:
+  cen-mc-rc/v1/machine/submit-mailpiece/{srcSystem}/{srcInstance}:
+    post:
+      summary: Submit Mailpiece
+      description: Provides the description of the content of a processing request. The MC creates the request and supplies the RC with the document. 
+      tags:
+        - machine
+      parameters:
+        - name: srcSystem
+          in: path
+          description: 3-letter uppercase name identifying the system issuing the message
+          type: string
+          default: DWS
+        - name: srcInstance
+          in: path
+          description: two-digit padded number identifying the system instance issuing the message
+          type: string
+          default: '01'
+      responses:
+        default:
+          schema:
+            $ref: '#/definitions/SubmitMailpiece'
+definitions:
+  $ref:
+    - ../ts/submit_mailpiece.ts
