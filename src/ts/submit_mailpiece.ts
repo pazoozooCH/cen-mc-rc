@@ -392,5 +392,5 @@ export interface LFT {
     actualVolume: number; // dm3
     boxVolume: number; // dm3
     volumeRatio: number; // is it not redundant?
-    weight: number; // grams ?
+    weight: number; // Weight of the ail item in grams
 }

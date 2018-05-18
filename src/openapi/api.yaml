@@ -36,8 +36,8 @@ paths:
 
   cen-mc-rc/v1/machine/update-mailpiece-attributes/{srcSystem}/{srcInstance}:
     post:
-      summary: Submit Mailpiece
-      description: Provides the description of the content of a processing request. The MC creates the request and supplies the RC with the document. 
+      summary: Update Mailpiece Attributes
+      description:  
       tags:
         - machine
       parameters:
@@ -55,7 +55,53 @@ paths:
         default:
           schema:
             $ref: '#/definitions/UpdateMailpieceAttributes'
+
+  cen-mc-rc/v1/machine/transmit-mailpiece-attributes/{srcSystem}/{srcInstance}:
+    post:
+      summary: Transmit Mailpiece Attributes
+      description: Transmit Mailpiece Attributes description
+      tags:
+        - machine
+      parameters:
+        - name: srcSystem
+          in: path
+          description: 3-letter uppercase name identifying the system issuing the message
+          type: string
+          default: DWS
+        - name: srcInstance
+          in: path
+          description: two-digit padded number identifying the system instance issuing the message
+          type: string
+          default: '01'
+      responses:
+        default:
+          schema:
+            $ref: '#/definitions/TransmitMailpieceAttributes'
+
+  cen-mc-rc/v1/machine/request-mailpiece-attributes/{srcSystem}/{srcInstance}:
+    post:
+      summary: Request Mailpiece Attributes
+      description: Request Mailpiece Attributes description
+      tags:
+        - machine
+      parameters:
+        - name: srcSystem
+          in: path
+          description: 3-letter uppercase name identifying the system issuing the message
+          type: string
+          default: DWS
+        - name: srcInstance
+          in: path
+          description: two-digit padded number identifying the system instance issuing the message
+          type: string
+          default: '01'
+      responses:
+        default:
+          schema:
+            $ref: '#/definitions/RequestMailpieceAttributes'
 definitions:
   $ref:
     - ../ts/submit_mailpiece.ts
     - ../ts/update_mailpiece_attributes.ts
+    - ../ts/transmit-mailpiece-attributes.ts
+    - ../ts/request-mailpiece-attributes.ts
