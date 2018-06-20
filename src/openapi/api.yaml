@@ -56,12 +56,12 @@ paths:
           schema:
             $ref: '#/definitions/UpdateMailpieceAttributes'
 
-  cen-mc-rc/v1/machine/transmit-mailpiece-attributes/{srcSystem}/{srcInstance}:
+  cen-mc-rc/v1/coding/transmit-mailpiece-attributes/{srcSystem}/{srcInstance}:
     post:
       summary: Transmit Mailpiece Attributes
       description: Transmit Mailpiece Attributes description
       tags:
-        - machine
+        - coding
       parameters:
         - name: srcSystem
           in: path
