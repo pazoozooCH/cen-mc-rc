@@ -4,8 +4,8 @@ info:
   title: CEN MC-RC
   description: Interaction between Machine Control and Reading Coding System - CEN/TS 16238. 
   contact:
-    name: Pham Huy Hoang (Swiss Post)
-    email: huyhoang.pham@post.ch
+    name: Martin Meyer (Swiss Post)
+    email: martin.meyer.1@post.ch
   version: @version@
 
 host: server:8080
