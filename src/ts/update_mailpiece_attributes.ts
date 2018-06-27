@@ -1,19 +1,19 @@
 /**
- * Der Dienst ermöglicht der MC, aktualisierte oder zusätzliche Informationen in Bezug auf eine Postsendung zu übertragen, die dem RC- System bereits vorgelegt worden ist.Solange sich die Postsendung zur Verarbeitung in der Maschine befindet, kann dieser Dienst von der MC mehrfach ausgeführt werden.
- * Für einen Sortierablauf ohne das Einscannen von Bildern (z.B.stationäre Bearbeitung im Zielfrachtzentrum oder Sortierung in der Reihenfolge der Zustellung) kann mit diesem Dienst die Behälternummer zur Verfügung gestellt werden, in den die Postsendung physikalisch einsortiert wird; für diesen Fall muss kein submitMailpiece ausgeführt werden.
+ * Der Dienst ermï¿½glicht der MC, aktualisierte oder zusï¿½tzliche Informationen in Bezug auf eine Postsendung zu ï¿½bertragen, die dem RC- System bereits vorgelegt worden ist.Solange sich die Postsendung zur Verarbeitung in der Maschine befindet, kann dieser Dienst von der MC mehrfach ausgefï¿½hrt werden.
+ * Fï¿½r einen Sortierablauf ohne das Einscannen von Bildern (z.B.stationï¿½re Bearbeitung im Zielfrachtzentrum oder Sortierung in der Reihenfolge der Zustellung) kann mit diesem Dienst die Behï¿½lternummer zur Verfï¿½gung gestellt werden, in den die Postsendung physikalisch einsortiert wird; fï¿½r diesen Fall muss kein submitMailpiece ausgefï¿½hrt werden.
  **/
 export interface UpdateMailpieceAttributes {
-    iood?: boolean; // Ein Boolesches Element, das anzeigt, ob die Postsendung ausserhalb des Laufzeitspeichers der Sendungsverarbeitungsmaschine weitergegeben wird oder nicht.
-    weight?: number; // Weight of the ail item in grams
-    indiciaValue?: string; // Wert der auf der Postsendung aufgedruckten Freimachung. Spezifische Werte sind je nach Programm definiert.
-    indiciaType?: string; // Typ der auf der Postsendung aufgedruckten Freimachung. Spezifische Werte sind je nach Programm definiert.
-    sortBin?: number; // Der Sortierbehälter, in das die Maschine die Postsendung physikalisch einsortiert.
-    idtagPrintStatus?: boolean; // Ein Boolescher Wert, der anzeigt, ob ein ID-Kennzeichen auf die Sendung aufgedruckt wurde.
-    code?: string; // Der der Postsendung zugeordnete Zustellsortiercode. Spezifische Werte sind je nach Programm definiert.
-    finalCoded?: boolean; // Ein Boolesches Element, das anzeigt, ob die Verarbeitung der Postsendung abgeschlossen ist oder nicht.
+    iood?: boolean; // A boolean element indicating whether or not the mail piece is passing outside the mail processing machineâ€™s delay line.
+    weight?: number; // Weight, in grams, of the mail piece.
+    indiciaValue?: string; // The value of the indicia printed on the mail piece. Specific values are defined on a per-program basis.
+    indiciaType?: string; // The type of the indicia printed on the mail piece. Specific values are defined on a per-program basis.
+    sortBin?: number; // The sort bin to which the machine physically sorted the mail piece.
+    idtagPrintStatus?: boolean; // A boolean value indicating whether or not an ID-Tag was printed on the mail piece.
+    code?: string; // The destination sort code assigned to the mail piece. Specific values are defined on a per-program basis.
+    finalCoded?: boolean; // A boolean value indicating whether or not processing for a mail piece is complete.
     mailpieceId: string; // Represents the identifier for the mail item, which has to be processed by the RC.
-    sourceId?: string; // Identifies the sorting machine.
-    scannerId?: string; // Dieses Attribut legt die ID des Scanners fest, mit dem die Postsendung eingescannt wurde.
-    feederId?: string; // Refers to the feeding unit, where the mailpiece image was lifted. 
+    sourceId?: string; // This attribute specifies the id of the sorting machine processing the mail piece.
+    scannerId?: string; // This attribute specifies the id of the scanner where the mail piece was scanned.
+    feederId?: string; // This attribute specifies the id of the feeder where the mail piece was lifted.
     sortplanId?: string; // Provides the id of the sortplan selected from a machine operator.
 }

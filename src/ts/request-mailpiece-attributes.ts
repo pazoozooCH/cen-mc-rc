@@ -1,6 +1,7 @@
 /**
- * Dieser Typ versorgt den anfragenden Teilnehmer mit den Ergebnissen einer Anreicherungsantwort. Das RC sendet das Dokument entweder auf eine Anforderung der MC oder ohne Abfrage zurück.
- * Die MC erwartet, dass sie alle festgelegten Attribute für die entsprechende Postsendung vom RC-System erhält.
+ * This type provides the requester with the ability to obtain the results of an enrichment response. The RC
+ * returns the document either on request of the MC or in an unsolicited fashion.
+ * The MC expects to get all defined attributes for the corresponding mailpiece from the RC System.
  **/
 export interface RequestMailpieceAttributes {
     mailpieceId?: string; // Represents the identifier for the mail item, which has to be processed by the RC.
